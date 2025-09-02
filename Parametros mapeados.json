@@ -1351,7 +1351,7 @@
     "Validação": "Não",
     "Quando é utilizado": "Para permitir que o comprador adicione informações ou instruções específicas no e-mail de cotação que não estão nos campos padrão do sistema.",
     "Integração": "Não"
-  }
+  },
   {
     "Categoria": "Protheus",
     "Funcionalidade": "Fluxo de Aprovação",
@@ -2159,7 +2159,7 @@
     "Validação": "Não",
     "Quando é utilizado": "Usado internamente pelo job de sincronização para buscar apenas os registros alterados desde a última execução.",
     "Integração": "Sim"
-  }
+  },
   {
     "Categoria": "Protheus",
     "Funcionalidade": "Integração",
@@ -3513,7 +3513,7 @@
     "Validação": "Não",
     "Quando é utilizado": "Para integrar o fluxo de aprovação de adiantamentos de processos de importação do ERP com a Central de Aprovações do GoEvo.",
     "Integração": "Sim"
-  }
+  },
   {
     "Categoria": "TPCS",
     "Funcionalidade": "Fluxo de Aprovação",
@@ -4304,7 +4304,7 @@
     "Validação": "Não",
     "Quando é utilizado": "Para permitir que o aprovador filtre e priorize a análise de pedidos que passaram por um processo formal de cotação versus aqueles criados manualmente.",
     "Integração": "Não"
-  }
+  },
 {
     "Categoria": "TPCS",
     "Funcionalidade": "Financeiro",
@@ -4699,7 +4699,7 @@
     "Validação": "Não",
     "Quando é utilizado": "Para agilizar a criação de novas compras que são idênticas ou muito similares a pré-pedidos anteriores.",
     "Integração": "Não"
-  }
+  },
 {
     "Categoria": "TPCS",
     "Funcionalidade": "Solicitação de Compra",
@@ -4753,7 +4753,7 @@
     "Validação": "Não",
     "Quando é utilizado": "Para permitir que um comprador centralizado gerencie e cote solicitações originadas de diferentes unidades de negócio.",
     "Integração": "Não"
-  }
+  },
 {
     "Categoria": "TPCS",
     "Funcionalidade": "Solicitação de Compra",
@@ -5625,7 +5625,7 @@
     "Validação": "Não",
     "Quando é utilizado": "Para garantir o nível máximo de detalhamento no custeio de projetos desde a solicitação.",
     "Integração": "Não"
-  }
+  },
  {
     "Categoria": "Protheus",
     "Funcionalidade": "Integração",
@@ -6157,8 +6157,5 @@
     "Validação": "Não",
     "Quando é utilizado": "Para padronizar a precisão monetária em todo o sistema. Pode ser aumentado para produtos com preços muito fracionados.",
     "Integração": "Não"
-  },
-
-
-
+  }
 ]
