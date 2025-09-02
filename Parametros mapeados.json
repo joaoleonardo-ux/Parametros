@@ -1,0 +1,1627 @@
+[
+  {
+    "parametro_original": "AGLUTINA_ITENS_SC",
+    "titulo_sugerido": "Agrupar Itens na Liberação de SC",
+    "descricao_sugerida": "Define como os itens são exibidos na tela de liberação de Solicitação de Compra (SC). 'S' agrupa os itens por SC (visão consolidada), e 'N' exibe todos os itens em uma lista única (visão detalhada).",
+    "funcionalidade_impactada": "Visualização da Tela de Liberação de SC",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Exibe todos os itens de todas as SCs em uma única lista.",
+      "S": "Agrupa os itens por SC, permitindo expandir para ver os detalhes (drill-down)."
+    }
+  },
+  {
+    "parametro_original": "API_OMIE_HABILITA",
+    "titulo_sugerido": "Habilitar Integração com ERP Omie",
+    "descricao_sugerida": "Ativa ('S') ou desativa ('N') completamente a integração do sistema com o ERP Omie, incluindo a troca de dados de cadastros e documentos.",
+    "funcionalidade_impactada": "Integração com ERP",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Integração com o Omie desabilitada.",
+      "S": "Integração com o Omie habilitada."
+    }
+  },
+  {
+    "parametro_original": "API_OMIE_PRIMERA_EXECUCAO",
+    "titulo_sugerido": "Carga Inicial de Dados (Omie)",
+    "descricao_sugerida": "Indica o tipo de sincronização com o Omie. 'S' para a primeira execução (carga total de dados). 'N' para execuções seguintes (carga incremental, buscando apenas dados novos ou alterados).",
+    "funcionalidade_impactada": "Integração com ERP",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "É a primeira carga de dados. Buscará todos os cadastros.",
+      "N": "É uma carga incremental. Buscará apenas registros novos ou alterados."
+    }
+  },
+  {
+    "parametro_original": "ATIVA_CENTRALIZADOR_LIBERACAO_DE_SOLICITACAO",
+    "titulo_sugerido": "Centralizar Liberação de SC (Multi-filial)",
+    "descricao_sugerida": "Permite que a tela de liberação de SC mostre as solicitações de todas as filiais ('S') ou apenas da filial do usuário logado ('N').",
+    "funcionalidade_impactada": "Visualização da Tela de Liberação de SC",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Usuário visualiza apenas as SCs da sua filial.",
+      "S": "Usuário visualiza as SCs de todas as filiais."
+    }
+  },
+  {
+    "parametro_original": "CONDICAO_PAGAMENTO_TEXTO",
+    "titulo_sugerido": "Campo Aberto para Condição de Pagamento do Fornecedor",
+    "descricao_sugerida": "Define se o campo 'Condição de Pagamento' na resposta da cotação pelo fornecedor será um campo de texto livre ('S') ou de seleção estruturada ('N').",
+    "funcionalidade_impactada": "Cotação (Resposta do Fornecedor)",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo estruturado (seleção de opções).",
+      "S": "Campo de texto livre."
+    }
+  },
+  {
+    "parametro_original": "CONTROLE_PLACA_CHASSI",
+    "titulo_sugerido": "Habilitar Controle de Compras por Placa/Chassi",
+    "descricao_sugerida": "Ativa o rastreamento de compras por veículo. Adiciona campos de 'Placa ou Chassi' na SC e Pré-Pedido, e 'Validade' na entrada da NF para controlar o histórico de compras para veículos específicos.",
+    "funcionalidade_impactada": "SC, Pré-Pedido, Nota Fiscal",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Funcionalidade desabilitada.",
+      "S": "Funcionalidade habilitada."
+    }
+  },
+  {
+    "parametro_original": "DEFINE_DATA_LIMITE_EMAIL",
+    "titulo_sugerido": "Exigir Data Limite na Cotação",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') a funcionalidade de definir uma data limite para o fornecedor responder à cotação enviada por e-mail.",
+    "funcionalidade_impactada": "Envio de Cotação",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Pergunta a data limite ao enviar cotação.",
+      "N": "Não pergunta a data limite."
+    }
+  },
+  {
+    "parametro_original": "DEFINE_DESCCOMPLEM_OBRIGATORIO_SC",
+    "titulo_sugerido": "Obrigatoriedade da Descrição Complementar na SC",
+    "descricao_sugerida": "Define a regra de obrigatoriedade para o campo 'Descrição Complementar' na SC: 'N' (Nunca), 'S' (Sempre para todos os itens), ou 'P' (Obrigatoriedade definida no cadastro do produto).",
+    "funcionalidade_impactada": "Solicitação de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo não obrigatório.",
+      "S": "Campo sempre obrigatório.",
+      "P": "Obrigatoriedade depende da configuração no cadastro do produto (campo B1_XOBDSC)."
+    }
+  },
+  {
+    "parametro_original": "DEFINE_MODELO_CONDICAO_DE_PAGAMENTO",
+    "titulo_sugerido": "Modelo de Condição de Pagamento (Pré-Pedido/NF)",
+    "descricao_sugerida": "Define o layout da condição de pagamento. 'S' para o modelo simples (vencimento e valor, até 9 parcelas). 'C' para o modelo completo (com 'Forma de Pagamento' e sem limite de parcelas).",
+    "funcionalidade_impactada": "Pré-Pedido e Nota Fiscal",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Modelo simples.",
+      "C": "Modelo completo."
+    }
+  },
+  {
+    "parametro_original": "DEFINE_MSGPEDIDO_OBRIGATORIO",
+    "titulo_sugerido": "Obrigatoriedade da Mensagem do Pedido",
+    "descricao_sugerida": "Torna o campo 'Mensagem Pedido' obrigatório ('S') ou opcional ('N') nas telas de Pré-Pedido e Processo de Cotação.",
+    "funcionalidade_impactada": "Pré-Pedido e Cotação",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo não obrigatório.",
+      "S": "Campo obrigatório."
+    }
+  },
+  {
+    "parametro_original": "DEFINE_OBSERVACAO_OBRIGATORIO_SC",
+    "titulo_sugerido": "Obrigatoriedade da Observação Interna na SC",
+    "descricao_sugerida": "Define a regra de obrigatoriedade para o campo 'Observação Interna' na SC: 'N' (Nunca), 'S' (Sempre), ou 'P' (Conforme Cadastro do Produto, campo B1_XOBOBI).",
+    "funcionalidade_impactada": "Solicitação de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo não obrigatório.",
+      "S": "Campo sempre obrigatório.",
+      "P": "Obrigatoriedade depende da configuração no cadastro do produto."
+    }
+  },
+  {
+    "parametro_original": "DEFINE_QTDDIAS_VENC_CA",
+    "titulo_sugerido": "Alerta de Vencimento do Certificado de Aprovação (C.A.)",
+    "descricao_sugerida": "Configura com quantos dias de antecedência o sistema deve alertar sobre o vencimento do C.A. de um EPI. Requer que o parâmetro 'HABILITA_CONTROLE_CA_SC_E_PD' esteja ativo.",
+    "funcionalidade_impactada": "Controle de EPI",
+    "valor_default": "0",
+    "valores_possiveis": {
+      "Numérico": "Número de dias de antecedência para o alerta."
+    }
+  },
+  {
+    "parametro_original": "DEFINE_REGRA_GRUPO_APROVACAO_PC",
+    "titulo_sugerido": "Origem do Grupo de Aprovação do Pedido de Compra",
+    "descricao_sugerida": "Define qual entidade do sistema determinará o grupo de aprovação do Pedido de Compra. Opções: 'CC' (Centro de Custo), 'PP' (Pré-Pedido), 'SO' (Solicitante), 'CO' (Comprador), 'GP' (Grupo de Produto), 'GA' (Grupo de Aprovação).",
+    "funcionalidade_impactada": "Fluxo de Aprovação de Pedido de Compra",
+    "valor_default": "CC",
+    "valores_possiveis": {
+      "CC": "Centro de Custo",
+      "PP": "Pré-Pedido",
+      "SO": "Solicitante",
+      "CO": "Comprador",
+      "GP": "Grupo de Produto",
+      "GA": "Grupo de Aprovação"
+    }
+  },
+  {
+    "parametro_original": "DEFINE_REGRA_GRUPO_APROVACAO_SC",
+    "titulo_sugerido": "Origem do Grupo de Aprovação da SC",
+    "descricao_sugerida": "Define qual entidade do sistema determinará o grupo de aprovação da Solicitação de Compra. Opções: 'CC' (Centro de Custo), 'GP' (Grupo de Produto), 'SO' (Solicitante), 'SC' (Solicitação de Compras).",
+    "funcionalidade_impactada": "Fluxo de Aprovação de SC",
+    "valor_default": "CC",
+    "valores_possiveis": {
+      "CC": "Centro de Custo",
+      "GP": "Grupo de Produto",
+      "SO": "Solicitante",
+      "SC": "Solicitação de Compras"
+    }
+  },
+  {
+    "parametro_original": "DEFINE_REGRA_GRUPO_APROVACAO_SP",
+    "titulo_sugerido": "Origem do Grupo de Aprovação da Solicitação de Pagamento",
+    "descricao_sugerida": "Define se o Grupo de Aprovação e o Liberador da Solicitação de Pagamento (SP) virão do cadastro do Centro de Custo ('CC') ou serão informados diretamente na SP ('SP').",
+    "funcionalidade_impactada": "Fluxo de Aprovação de Solicitação de Pagamento",
+    "valor_default": "CC",
+    "valores_possiveis": {
+      "CC": "Origem da aprovação é o Centro de Custo.",
+      "SP": "Origem da aprovação é a própria Solicitação de Pagamento."
+    }
+  },
+  {
+    "parametro_original": "DEFINE_REGRA_MOVIMENTACAO_INVENTARIO",
+    "titulo_sugerido": "Tabela de Movimentação de Inventário",
+    "descricao_sugerida": "Define a tabela do Protheus usada para movimentações de inventário. 'SD3' para o padrão Protheus (atualiza saldos em SB2) ou 'PSQ' para a tabela Goevo (atualiza saldos em PSR).",
+    "funcionalidade_impactada": "Inventário/Estoque",
+    "valor_default": "SD3",
+    "valores_possiveis": {
+      "SD3": "Usa tabelas SD3 e SB2 (Padrão Protheus).",
+      "PSQ": "Usa tabelas PSQ e PSR (Goevo)."
+    }
+  },
+  {
+    "parametro_original": "DESCRICAO_SUBSTITUTA",
+    "titulo_sugerido": "Permitir Descrição Alternativa de Produto",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') a possibilidade de usar uma descrição de produto alternativa (substituta) nas telas de SC e Pré-Pedido.",
+    "funcionalidade_impactada": "SC e Pré-Pedido",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Funcionalidade desabilitada.",
+      "S": "Funcionalidade habilitada."
+    }
+  },
+  {
+    "parametro_original": "EMAIL_DILIGENCIADOR",
+    "titulo_sugerido": "E-mail do Responsável pelo Agendamento de Inspeções",
+    "descricao_sugerida": "Define o endereço de e-mail do usuário responsável por controlar o agendamento de inspetores no portal do fornecedor.",
+    "funcionalidade_impactada": "Portal do Fornecedor (Inspeção)",
+    "valor_default": "suporte@tprime.com.br",
+    "valores_possiveis": {
+      "Texto": "Endereço de e-mail."
+    }
+  },
+  {
+    "parametro_original": "ENTIDADE_CCUSTO",
+    "titulo_sugerido": "Rótulo para 'Centro de Custo'",
+    "descricao_sugerida": "Define o nome que será exibido para a entidade 'Centro de Custo' em todas as telas do sistema SCM.",
+    "funcionalidade_impactada": "Nomenclatura do Sistema",
+    "valor_default": "Centro de Custo",
+    "valores_possiveis": {
+      "Texto": "Nome customizado para a entidade."
+    }
+  },
+  {
+    "parametro_original": "ENTIDADE_CLASSEVALOR",
+    "titulo_sugerido": "Rótulo para 'Classe de Valor'",
+    "descricao_sugerida": "Define o nome que será exibido para a entidade 'Classe de Valor' em todas as telas do sistema SCM.",
+    "funcionalidade_impactada": "Nomenclatura do Sistema",
+    "valor_default": "Classe de Valor",
+    "valores_possiveis": {
+      "Texto": "Nome customizado para a entidade."
+    }
+  },
+  {
+    "parametro_original": "ENTIDADE_COMPRADOR",
+    "titulo_sugerido": "Rótulo para 'Comprador'",
+    "descricao_sugerida": "Define o nome que será exibido para a entidade 'Comprador' em todas as telas do sistema SCM.",
+    "funcionalidade_impactada": "Nomenclatura do Sistema",
+    "valor_default": "Comprador",
+    "valores_possiveis": {
+      "Texto": "Nome customizado para a entidade."
+    }
+  },
+  {
+    "parametro_original": "ENTIDADE_CONTAORC",
+    "titulo_sugerido": "Rótulo para 'Conta Orçamentária'",
+    "descricao_sugerida": "Define o nome que será exibido para a entidade 'Conta Orçamentária' em todas as telas do sistema SCM.",
+    "funcionalidade_impactada": "Nomenclatura do Sistema",
+    "valor_default": "Conta Orçamentária",
+    "valores_possiveis": {
+      "Texto": "Nome customizado para a entidade."
+    }
+  },
+  {
+    "parametro_original": "ENTIDADE_ITEMCONTABIL",
+    "titulo_sugerido": "Rótulo para 'Item Contábil'",
+    "descricao_sugerida": "Define o nome que será exibido para a entidade 'Item Contábil' em todas as telas do sistema SCM.",
+    "funcionalidade_impactada": "Nomenclatura do Sistema",
+    "valor_default": "Item Contabil",
+    "valores_possiveis": {
+      "Texto": "Nome customizado para a entidade."
+    }
+  },
+  {
+    "parametro_original": "ENTIDADE_PLANILHAORC",
+    "titulo_sugerido": "Rótulo para 'Planilha Orçamentária'",
+    "descricao_sugerida": "Define o nome que será exibido para a entidade 'Planilha Orçamentária' em todas as telas do sistema SCM.",
+    "funcionalidade_impactada": "Nomenclatura do Sistema",
+    "valor_default": "Planilha Orçamentária",
+    "valores_possiveis": {
+      "Texto": "Nome customizado para a entidade."
+    }
+  },
+  {
+    "parametro_original": "ENTIDADE_SC",
+    "titulo_sugerido": "Rótulo para 'Solicitação de Compra'",
+    "descricao_sugerida": "Define o nome que será exibido para a entidade 'Solicitação de Compra' em todas as telas do sistema SCM.",
+    "funcionalidade_impactada": "Nomenclatura do Sistema",
+    "valor_default": "Solicitação de Compra",
+    "valores_possiveis": {
+      "Texto": "Nome customizado para a entidade."
+    }
+  },
+  {
+    "parametro_original": "EXCLUIR_FILA_SCR_REPROVACAO_PEDIDO_DE_COMPRA",
+    "titulo_sugerido": "Ação ao Reprovar Pedido de Compra",
+    "descricao_sugerida": "Define o que acontece quando um Pedido de Compra é reprovado. 'S' exclui a fila de aprovação e reabre o Pré-Pedido. 'N' mantém o pedido bloqueado e a fila com status 'Reprovado'.",
+    "funcionalidade_impactada": "Fluxo de Aprovação de Pedido de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Mantém o pedido bloqueado e a fila como reprovada.",
+      "S": "Exclui a fila de aprovação e reabre o Pré-Pedido para edição."
+    }
+  },
+  {
+    "parametro_original": "EXIBE_ADIANTAMENTO",
+    "titulo_sugerido": "Exibir Opção de Adiantamento",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') a exibição da opção de 'Adiantamento' nas telas de Pré-Pedido e Pedido de Compra.",
+    "funcionalidade_impactada": "Pré-Pedido e Pedido de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Opção de adiantamento oculta.",
+      "S": "Opção de adiantamento visível."
+    }
+  },
+  {
+    "parametro_original": "EXIBE_CAMPOS_IMP_FICHA_RESPFORN_COT",
+    "titulo_sugerido": "Exibir Campos de Impostos na Resposta da Cotação",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) dos campos de impostos na tela de resposta da cotação pelo fornecedor.",
+    "funcionalidade_impactada": "Cotação (Resposta do Fornecedor)",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Campos de impostos são exibidos.",
+      "N": "Campos de impostos são ocultos."
+    }
+  },
+  {
+    "parametro_original": "EXIBE_CC",
+    "titulo_sugerido": "Exibir Centro de Custo",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) do campo 'Centro de Custo' nas telas do SCM.",
+    "funcionalidade_impactada": "Campos Contábeis (Geral)",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Campo Centro de Custo é exibido.",
+      "N": "Campo Centro de Custo é oculto."
+    }
+  },
+  {
+    "parametro_original": "EXIBE_CLVL",
+    "titulo_sugerido": "Exibir Classe de Valor (Segmento/Projeto)",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) do campo 'Classe de Valor' (usado para segmento ou projeto) nas telas do SCM.",
+    "funcionalidade_impactada": "Campos Contábeis (Geral)",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo Classe de Valor é oculto.",
+      "S": "Campo Classe de Valor é exibido."
+    }
+  },
+  {
+    "parametro_original": "EXIBE_CONTA_CONTABIL",
+    "titulo_sugerido": "Exibir Conta Contábil na SC",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) do campo 'Conta Contábil' na tela de Solicitação de Compra.",
+    "funcionalidade_impactada": "Solicitação de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo Conta Contábil é oculto.",
+      "S": "Campo Conta Contábil é exibido."
+    }
+  },
+  {
+    "parametro_original": "EXIBE_DESC_CC_CLASSIF",
+    "titulo_sugerido": "Formato de Exibição do Centro de Custo",
+    "descricao_sugerida": "Define como o Centro de Custo será exibido nos campos de classificação. 'C' (apenas código), 'D' (apenas descrição), 'CD' (código e descrição).",
+    "funcionalidade_impactada": "Visualização (Geral)",
+    "valor_default": "C",
+    "valores_possiveis": {
+      "C": "Apenas o código.",
+      "D": "Apenas a descrição.",
+      "CD": "Código e descrição."
+    }
+  },
+  {
+    "parametro_original": "EXIBE_ENTREGA_OBRA",
+    "titulo_sugerido": "Exibir Filtro de Obra na Lista de Pedidos",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') a exibição de um filtro por 'Obra' na tela de listagem de Pedidos de Compra.",
+    "funcionalidade_impactada": "Listagem de Pedido de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Filtro de Obra oculto.",
+      "S": "Filtro de Obra visível."
+    }
+  },
+  {
+    "parametro_original": "EXIBE_ENTREGAOBRA",
+    "titulo_sugerido": "Exibir Campo 'Entrega na Obra' no Pré-Pedido",
+    "descricao_sugerida": "Controla a visibilidade ('1' para exibir, '2' para ocultar) do campo 'Entrega na Obra' na tela de Pré-Pedido.",
+    "funcionalidade_impactada": "Pré-Pedido",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo oculto.",
+      "S": "Campo exibido."
+    }
+  },
+  {
+    "parametro_original": "EXIBE_IMPOSTOS_IMP_PEDIDO",
+    "titulo_sugerido": "Exibir Impostos na Impressão do Pedido",
+    "descricao_sugerida": "Define se os valores dos impostos devem ser incluídos ('S') ou omitidos ('N') na impressão do Pedido de Compra.",
+    "funcionalidade_impactada": "Impressão de Pedido de Compra",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Impostos são exibidos na impressão.",
+      "N": "Impostos são omitidos na impressão."
+    }
+  },
+  {
+    "parametro_original": "EXIBE_IT_CONTABIL",
+    "titulo_sugerido": "Exibir Item Contábil (Centro de Resultado)",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) do campo 'Item Contábil' (usado para centro de resultado) nas telas do SCM.",
+    "funcionalidade_impactada": "Campos Contábeis (Geral)",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo Item Contábil é oculto.",
+      "S": "Campo Item Contábil é exibido."
+    }
+  },
+  {
+    "parametro_original": "EXIBE_NATUREZA",
+    "titulo_sugerido": "Exibir Campo 'Natureza' no Pré-Pedido",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) do campo 'Natureza' na tela de Pré-Pedido.",
+    "funcionalidade_impactada": "Pré-Pedido",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo Natureza é oculto.",
+      "S": "Campo Natureza é exibido."
+    }
+  },
+  {
+    "parametro_original": "EXIBE_OBS_FORNEC",
+    "titulo_sugerido": "Exibir Campo 'Observação para o Fornecedor'",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) do campo 'Observação para o Fornecedor' nas telas de Mapa de Cotação, Pré-Pedido e Pedido de Compra.",
+    "funcionalidade_impactada": "Cotação, Pré-Pedido, Pedido de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo oculto.",
+      "S": "Campo exibido."
+    }
+  },
+  {
+    "parametro_original": "EXIBE_OBS_FORNEC_IMP_PEDIDO",
+    "titulo_sugerido": "Imprimir 'Observação para o Fornecedor' no Pedido",
+    "descricao_sugerida": "Define se o conteúdo do campo 'Observação para o Fornecedor' deve ser incluído ('S') ou omitido ('N') na impressão do Pedido de Compra.",
+    "funcionalidade_impactada": "Impressão de Pedido de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Observação não é impressa.",
+      "S": "Observação é impressa."
+    }
+  },
+  {
+    "parametro_original": "EXIBE_PCO",
+    "titulo_sugerido": "Exibir Campos de Orçamento (PCO)",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) dos campos de 'Planilha Orçamentária' e 'Conta Orçamentária' nas telas de compras.",
+    "funcionalidade_impactada": "Controle Orçamentário",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campos de PCO ocultos.",
+      "S": "Campos de PCO exibidos."
+    }
+  },
+  {
+    "parametro_original": "EXIBE_PCO_SC",
+    "titulo_sugerido": "Exibir Campos de Orçamento (PCO) na SC",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) dos campos de 'Planilha Orçamentária' e 'Conta Orçamentária' especificamente na tela de Solicitação de Compra.",
+    "funcionalidade_impactada": "Solicitação de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campos de PCO ocultos na SC.",
+      "S": "Campos de PCO exibidos na SC."
+    }
+  },
+  {
+    "parametro_original": "FILTRO_CONTA_ORC_CC",
+    "titulo_sugerido": "Filtrar Conta Orçamentária por Centro de Custo",
+    "descricao_sugerida": "Ativa ('S') ou desativa ('N') um filtro na busca de Conta Orçamentária, que passará a considerar o Centro de Custo selecionado no documento.",
+    "funcionalidade_impactada": "Busca de Conta Orçamentária",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Filtro desativado.",
+      "S": "Filtro ativado."
+    }
+  },
+  {
+    "parametro_original": "FILTRO_CONTA_ORC_LOCAL_ENT",
+    "titulo_sugerido": "Filtrar Conta Orçamentária por Local de Entrega",
+    "descricao_sugerida": "Ativa ('S') ou desativa ('N') um filtro na busca de Conta Orçamentária, que passará a considerar o Local de Entrega selecionado no documento.",
+    "funcionalidade_impactada": "Busca de Conta Orçamentária",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Filtro desativado.",
+      "S": "Filtro ativado."
+    }
+  },
+  {
+    "parametro_original": "FIXA_LOCAL_DE_ENTREGA",
+    "titulo_sugerido": "Fixar Local de Entrega com Base na Filial do Usuário",
+    "descricao_sugerida": "Quando ativado ('S'), preenche automaticamente e bloqueia o campo 'Local de Entrega' com a filial do usuário logado. Se 'N', o campo fica livre para seleção.",
+    "funcionalidade_impactada": "Documentos de Compra (Geral)",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo livre para seleção.",
+      "S": "Campo preenchido e travado com a filial do usuário."
+    }
+  },
+  {
+    "parametro_original": "GERA_PEDIDO_AGLUTINADO",
+    "titulo_sugerido": "Regra de Agrupamento para Geração de Pedidos",
+    "descricao_sugerida": "Define como os itens de uma cotação serão agrupados para gerar Pedidos de Compra. As opções combinam Fornecedor, Grupo de Aprovação, SC, Centro de Custo e Local de Entrega.",
+    "funcionalidade_impactada": "Geração de Pedido de Compra",
+    "valor_default": "FOR_GR",
+    "valores_possiveis": {
+      "FOR_GR": "Por Fornecedor e Grupo de Aprovação.",
+      "FOR_GR_SC": "Por Fornecedor, Grupo de Aprovação e SC.",
+      "FOR_GR_CC": "Por Fornecedor, Grupo de Aprovação e Centro de Custo.",
+      "FOR_GR_SC_CC": "Por Fornecedor, Grupo de Aprovação, SC e Centro de Custo.",
+      "FOR_GR_LE": "Por Fornecedor, Grupo de Aprovação e Local de Entrega.",
+      "FOR_GR_CC_LE": "Por Fornecedor, Grupo de Aprovação, Centro de Custo e Local de Entrega."
+    }
+  },
+  {
+    "parametro_original": "GRUPO_APROV_ADIANT_PEDIDO",
+    "titulo_sugerido": "Grupo de Aprovação para Adiantamento de Pedido",
+    "descricao_sugerida": "Define o código do grupo de aprovação específico que será acionado quando um Pedido de Compra contiver uma solicitação de adiantamento.",
+    "funcionalidade_impactada": "Fluxo de Aprovação de Adiantamento",
+    "valor_default": "",
+    "valores_possiveis": {
+      "Texto": "Código do grupo de aprovação."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_ALTERACAO_PRODUTO_PREPEDIDO",
+    "titulo_sugerido": "Permitir Alteração de Produto no Pré-Pedido",
+    "descricao_sugerida": "Define se o usuário pode ('S') ou não ('N') modificar o código do produto na tela de Pré-Pedido após ele ter vindo de uma SC ou cotação.",
+    "funcionalidade_impactada": "Pré-Pedido",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Permite alterar o produto.",
+      "N": "Não permite alterar o produto."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_ALTERACAO_QTD_PREPEDIDO",
+    "titulo_sugerido": "Permitir Alteração de Quantidade no Pré-Pedido",
+    "descricao_sugerida": "Define se o usuário pode ('S') ou não ('N') alterar o campo de quantidade na tela de Pré-Pedido.",
+    "funcionalidade_impactada": "Pré-Pedido",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo de quantidade bloqueado.",
+      "S": "Campo de quantidade editável."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_ANUENCIA_COMPRAS",
+    "titulo_sugerido": "Habilitar Anuencia no Mapa de Cotação",
+    "descricao_sugerida": "Ativa ('S') ou desativa ('N') o fluxo de anuência (uma segunda aprovação, geralmente de um solicitante ou área técnica) no mapa de cotação.",
+    "funcionalidade_impactada": "Mapa de Cotação",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Fluxo de anuência desabilitado.",
+      "S": "Fluxo de anuência habilitado."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_BOTAO_ENCERRAR_COTACAO_MAPA",
+    "titulo_sugerido": "Permitir Encerrar Cotação sem Gerar Pedido",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') um botão no mapa que permite encerrar o processo de cotação sem a necessidade de gerar um Pedido de Compra.",
+    "funcionalidade_impactada": "Mapa de Cotação",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Botão de encerramento oculto.",
+      "S": "Botão de encerramento visível."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_BOTAO_NOVOPREPEDIDO",
+    "titulo_sugerido": "Permitir Inclusão Manual de Pré-Pedido",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') o botão que permite a criação manual de um novo Pré-Pedido, sem que ele se origine de uma cotação.",
+    "funcionalidade_impactada": "Pré-Pedido",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Permite criar Pré-Pedido manualmente.",
+      "N": "Não permite criar Pré-Pedido manualmente."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_CAMPO_RESPONSAVEIS_ENVOLVIDOS_SC",
+    "titulo_sugerido": "Habilitar Campo 'Responsáveis Envolvidos'",
+    "descricao_sugerida": "Exibe ('S') ou oculta ('N') um campo na SC, Pré-Pedido e Pedido para selecionar usuários que devem ser copiados em todos os e-mails relacionados a esses processos.",
+    "funcionalidade_impactada": "SC, Pré-Pedido, Pedido de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo oculto.",
+      "S": "Campo exibido."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_CAMPOPP_APROVADOR",
+    "titulo_sugerido": "Exibir Campo 'Aprovador' no Pré-Pedido",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) do campo de seleção de Aprovador na tela de Pré-Pedido.",
+    "funcionalidade_impactada": "Pré-Pedido",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo Aprovador oculto.",
+      "S": "Campo Aprovador exibido."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_CAMPOPP_ORCAMENTO",
+    "titulo_sugerido": "Exibir Campo 'Orçamento' no Pré-Pedido",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) do campo de Orçamento na tela de Pré-Pedido.",
+    "funcionalidade_impactada": "Pré-Pedido",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo Orçamento oculto.",
+      "S": "Campo Orçamento exibido."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_CAMPOPP_VENCIMENTO",
+    "titulo_sugerido": "Exibir Campo 'Vencimento' no Pré-Pedido",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) do campo de Vencimento na tela de Pré-Pedido.",
+    "funcionalidade_impactada": "Pré-Pedido",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo Vencimento oculto.",
+      "S": "Campo Vencimento exibido."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_CAMPOS_CONTABEIS",
+    "titulo_sugerido": "Utilizar Campos Contábeis",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') globalmente o uso dos campos 'Item Contábil', 'Classe de Valor' e 'Classificação' (Centro de Custo) no sistema.",
+    "funcionalidade_impactada": "Campos Contábeis (Geral)",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Campos contábeis habilitados.",
+      "N": "Campos contábeis desabilitados."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_CAMPOS_GRPPROD",
+    "titulo_sugerido": "Utilizar Grupo de Produto",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') o uso e a exibição de campos relacionados a 'Grupo de Produto' no sistema.",
+    "funcionalidade_impactada": "Cadastro de Produto, Filtros",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campos de Grupo de Produto desabilitados.",
+      "S": "Campos de Grupo de Produto habilitados."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_CAMPOS_PROJETO",
+    "titulo_sugerido": "Utilizar Estrutura de Projetos (Projeto, Revisão, Tarefa)",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') o uso e a exibição dos campos 'Projeto', 'Revisão' e 'Tarefa' no processo de compras.",
+    "funcionalidade_impactada": "SC, Pré-Pedido, Pedido de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campos de Projeto desabilitados.",
+      "S": "Campos de Projeto habilitados."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_CAMPOS_VERBA",
+    "titulo_sugerido": "Utilizar Controle de Verba",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) dos campos relacionados ao controle de verba ('Verba', 'Valor', 'Total') no sistema.",
+    "funcionalidade_impactada": "Controle Orçamentário",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campos de Verba ocultos.",
+      "S": "Campos de Verba exibidos."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_CAMPOSC_ANUENTE",
+    "titulo_sugerido": "Exibir Campo 'Anuente' na SC",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) do campo de seleção de 'Anuente' na tela de Solicitação de Compra.",
+    "funcionalidade_impactada": "Solicitação de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo Anuente oculto.",
+      "S": "Campo Anuente exibido."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_CAMPOSC_APROVADOR",
+    "titulo_sugerido": "Exibir Campo 'Aprovador' na SC",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) do campo de seleção de 'Aprovador' na tela de Solicitação de Compra.",
+    "funcionalidade_impactada": "Solicitação de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo Aprovador oculto.",
+      "S": "Campo Aprovador exibido."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_CAMPOSC_COMPRADOR",
+    "titulo_sugerido": "Exibir Campo 'Comprador' na SC",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) do campo de seleção de 'Comprador' na tela de Solicitação de Compra.",
+    "funcionalidade_impactada": "Solicitação de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo Comprador oculto.",
+      "S": "Campo Comprador exibido."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_CAMPOSC_FORNECEDOR",
+    "titulo_sugerido": "Exibir Campo 'Fornecedor' na SC",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) do campo de indicação de 'Fornecedor' na tela de Solicitação de Compra.",
+    "funcionalidade_impactada": "Solicitação de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo Fornecedor oculto.",
+      "S": "Campo Fornecedor exibido."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_CAMPOSC_ORCAMENTO",
+    "titulo_sugerido": "Exibir Campo 'Orçamento' na SC",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) do campo de 'Orçamento' na tela de Solicitação de Compra.",
+    "funcionalidade_impactada": "Solicitação de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo Orçamento oculto.",
+      "S": "Campo Orçamento exibido."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_CAMPOSC_VENCIMENTO",
+    "titulo_sugerido": "Exibir Campo 'Vencimento' na SC",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) do campo 'Vencimento' na tela de Solicitação de Compra.",
+    "funcionalidade_impactada": "Solicitação de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo Vencimento oculto.",
+      "S": "Campo Vencimento exibido."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_CODEMP_E_CODFILIAL_IMP_PC",
+    "titulo_sugerido": "Incluir Código da Empresa/Filial na Impressão do Pedido",
+    "descricao_sugerida": "Define se o código da empresa e da filial devem ser incluídos ('S') ou omitidos ('N') na impressão do Pedido de Compra.",
+    "funcionalidade_impactada": "Impressão de Pedido de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Códigos não são impressos.",
+      "S": "Códigos são impressos."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_COLUNA_FILIAL_TELAS_GOEVO",
+    "titulo_sugerido": "Exibir Coluna e Referências de Filial",
+    "descricao_sugerida": "Controla a visibilidade global ('S' para exibir, 'N' para ocultar) da coluna 'Filial' e outras referências a filiais nas telas do sistema.",
+    "funcionalidade_impactada": "Visualização (Geral)",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Coluna e referências de Filial são exibidas.",
+      "N": "Coluna e referências de Filial são ocultas."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_COLUNA_OBS_IMPPED",
+    "titulo_sugerido": "Formato de Impressão da Observação do Item no Pedido",
+    "descricao_sugerida": "Define como a observação do item será impressa no Pedido de Compra. 'S' para imprimir em uma coluna separada. 'N' para imprimir junto à descrição do produto.",
+    "funcionalidade_impactada": "Impressão de Pedido de Compra",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Observação em coluna dedicada.",
+      "N": "Observação junto à descrição do produto."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_CONTROLE_CA_SC_E_PD",
+    "titulo_sugerido": "Habilitar Controle de Certificado de Aprovação (C.A.)",
+    "descricao_sugerida": "Ativa ('S') ou desativa ('N') o controle para produtos tipo EPI, carregando os números de C.A. no campo 'Descrição Complementar' na SC e Pré-Pedido.",
+    "funcionalidade_impactada": "Controle de EPI",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Controle de C.A. desabilitado.",
+      "S": "Controle de C.A. habilitado."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_DATA_ENTREGA_OU_DIAS_PARA_ENTREGA_MAPA",
+    "titulo_sugerido": "Formato do Prazo de Entrega no Mapa de Cotação",
+    "descricao_sugerida": "Define se o fornecedor informa o prazo de entrega como uma data específica ('E' - Data de Entrega) ou em quantidade de dias ('D' - Dias para Entrega) no mapa de cotação.",
+    "funcionalidade_impactada": "Mapa de Cotação",
+    "valor_default": "D",
+    "valores_possiveis": {
+      "E": "Data de Entrega (formato DD/MM/AAAA).",
+      "D": "Dias para Entrega (formato numérico)."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_DESC_ENT_CONTABIL_CLASSIF",
+    "titulo_sugerido": "Exibir Descrição das Entidades Contábeis",
+    "descricao_sugerida": "Quando ativado ('S'), a coluna 'Classif.' em telas como Pré-Pedido e NF exibirá a descrição das entidades contábeis (ex: nome do centro de custo) em vez do código.",
+    "funcionalidade_impactada": "Visualização (Geral)",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Exibe o código da entidade.",
+      "S": "Exibe a descrição da entidade."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_EDICAO_EMAIL_COTACAO",
+    "titulo_sugerido": "Permitir Edição do Corpo do E-mail de Cotação",
+    "descricao_sugerida": "Define se o usuário pode ('S') ou não ('N') editar o texto do corpo do e-mail ao enviar uma cotação para os fornecedores.",
+    "funcionalidade_impactada": "Envio de Cotação",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Corpo do e-mail não é editável.",
+      "S": "Corpo do e-mail é editável."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_GESTOR_CC",
+    "titulo_sugerido": "Habilitar Aprovação de SC por Gestor do Centro de Custo",
+    "descricao_sugerida": "Ativa ('S') ou desativa ('N') o fluxo de aprovação de Solicitações de Compra pelo gestor associado ao Centro de Custo do item.",
+    "funcionalidade_impactada": "Fluxo de Aprovação de SC",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Aprovação por gestor do CC habilitada.",
+      "N": "Aprovação por gestor do CC desabilitada."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_GRUPO_APROV_PREPEDIDO",
+    "titulo_sugerido": "Permitir Seleção de Grupo de Aprovação no Pré-Pedido",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') um campo na tela de Pré-Pedido para que o usuário selecione manualmente o Grupo de Aprovação do Pedido de Compra.",
+    "funcionalidade_impactada": "Pré-Pedido",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo de seleção oculto.",
+      "S": "Campo de seleção exibido."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_IMP_PEDIDO_COMPRA_TELA_SC",
+    "titulo_sugerido": "Permitir Impressão de Pedido a Partir da Tela de SC",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') um botão/opção na tela de Solicitações de Compra para imprimir o Pedido de Compra correspondente, caso já exista.",
+    "funcionalidade_impactada": "Listagem de SC",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Função habilitada.",
+      "N": "Função desabilitada."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_INCLUSAO_FORNECEDOR_PRE_PEDIDO_E_SOL_PAG",
+    "titulo_sugerido": "Permitir Cadastro/Edição de Fornecedor no Pré-Pedido e SP",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') a funcionalidade de cadastrar ou editar informações do fornecedor diretamente nas telas de Pré-Pedido e Solicitação de Pagamento.",
+    "funcionalidade_impactada": "Pré-Pedido e Solicitação de Pagamento",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Funcionalidade desabilitada.",
+      "S": "Funcionalidade habilitada."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_INCLUSAO_PRODUTO_FICHA_PRE_SOLICITACAO_CO",
+    "titulo_sugerido": "Permitir Cadastro de Produto no Pré-Pedido e Pedido",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') a funcionalidade de cadastrar um novo produto diretamente nas telas de Pré-Pedido e Pedido de Compra.",
+    "funcionalidade_impactada": "Pré-Pedido e Pedido de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Funcionalidade desabilitada.",
+      "S": "Funcionalidade habilitada."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_INF_GERAIS_E_REQ_TECNICOS",
+    "titulo_sugerido": "Habilitar Campos de Informações Gerais e Requisitos Técnicos",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) dos campos de texto livre 'Informações Gerais' e 'Requisitos Técnicos' no mapa de cotação, pré-pedido e pedido.",
+    "funcionalidade_impactada": "Cotação, Pré-Pedido, Pedido de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campos ocultos.",
+      "S": "Campos exibidos."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_INTERACAO",
+    "titulo_sugerido": "Habilitar Botões de Interação",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) dos botões de interação (chat, comentários, etc.) nas telas de Pedido de Compra e Liberação de Pedido de Compra.",
+    "funcionalidade_impactada": "Pedido de Compra e Liberação de Pedido",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Botões de interação habilitados.",
+      "N": "Botões de interação desabilitados."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_JUSTIFICATIVA_COMPRADOR",
+    "titulo_sugerido": "Imprimir Justificativa do Comprador no Pré-Pedido",
+    "descricao_sugerida": "Define se o campo 'Justificativa do Comprador' deve ser incluído ('S') ou omitido ('N') na impressão do Pré-Pedido.",
+    "funcionalidade_impactada": "Impressão de Pré-Pedido",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Justificativa é impressa.",
+      "N": "Justificativa não é impressa."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_LOCAL_FATURAMENTO",
+    "titulo_sugerido": "Habilitar Campo 'Local de Faturamento'",
+    "descricao_sugerida": "Ativa ('S') ou desativa ('N') o campo 'Local de Faturamento' no processo de compra, permitindo especificar um endereço de faturamento diferente do de entrega.",
+    "funcionalidade_impactada": "Processo de Compra (Geral)",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo desabilitado.",
+      "S": "Campo habilitado."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_MULTIPLICACAO_QTD_EMBALAGEM",
+    "titulo_sugerido": "Multiplicar Quantidade Solicitada pela Embalagem",
+    "descricao_sugerida": "Quando ativado ('S'), a quantidade final do item no pedido será o resultado da quantidade solicitada multiplicada pela quantidade da embalagem do produto. Se 'N', considera apenas a quantidade solicitada.",
+    "funcionalidade_impactada": "Cálculo de Quantidade",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Multiplicação desabilitada.",
+      "S": "Multiplicação habilitada."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_NOVA_VISUALIZACAO",
+    "titulo_sugerido": "Ativar Nova Interface Visual",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') a nova versão da interface de usuário do sistema.",
+    "funcionalidade_impactada": "Interface do Usuário (Geral)",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Usa a nova interface.",
+      "N": "Usa a interface antiga."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_NOVO_INCLUSAO_FORNECEDOR",
+    "titulo_sugerido": "Ativar Novo Fluxo de Cadastro de Fornecedor",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') o novo formato de cadastro de fornecedor, onde o processo inicia com a digitação do CNPJ/CPF e cria um registro com status 'Em confecção'.",
+    "funcionalidade_impactada": "Cadastro de Fornecedor",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Usa o fluxo de cadastro padrão.",
+      "S": "Usa o novo fluxo de cadastro simplificado."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_NOVO_ITEM_PP",
+    "titulo_sugerido": "Permitir Adicionar Novo Item no Pré-Pedido",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') a funcionalidade de adicionar novos itens diretamente na tela de Pré-Pedido.",
+    "funcionalidade_impactada": "Pré-Pedido",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Permite adicionar novos itens.",
+      "N": "Não permite adicionar novos itens."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_NOVO_PROCESSO_APROVACAO",
+    "titulo_sugerido": "Ativar Novo Processo de Aprovação Centralizado",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') o novo fluxo de aprovação, que é centralizado por grupo de aprovação ou por aprovador individual, em vez de seguir a hierarquia padrão.",
+    "funcionalidade_impactada": "Fluxo de Aprovação (Geral)",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Usa o processo de aprovação padrão.",
+      "S": "Usa o novo processo de aprovação centralizado."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_PRODUTO_GENERICO",
+    "titulo_sugerido": "Permitir Uso de Produto Genérico na SC",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') a utilização de um 'Produto Genérico' na inclusão de Solicitações de Compra, permitindo criar SCs para itens não cadastrados.",
+    "funcionalidade_impactada": "Solicitação de Compra",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Permite o uso de produto genérico.",
+      "N": "Não permite o uso de produto genérico."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_SC_REGULARIZACAO",
+    "titulo_sugerido": "Habilitar Fluxo de SC de Regularização",
+    "descricao_sugerida": "Ativa ('S') ou desativa ('N') um fluxo especial para SCs de regularização, habilitando um botão 'Gerar Pedido' diretamente na SC e um status 'Pendente de Regularização'. Exige que 'SCM_DEFINE_MESMA_PRIORIDADE_ITENS_SC' esteja ativo.",
+    "funcionalidade_impactada": "Solicitação de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Fluxo especial desabilitado.",
+      "S": "Fluxo especial habilitado."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_TABELA_PRECO_PRE_PEDIDO",
+    "titulo_sugerido": "Consultar Tabela de Preço no Pré-Pedido",
+    "descricao_sugerida": "Ativa ('S') ou desativa ('N') a busca automática de preços na tabela de preços do fornecedor (AIA/AIB) e atualiza o valor unitário dos itens no Pré-Pedido.",
+    "funcionalidade_impactada": "Pré-Pedido",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Consulta desabilitada.",
+      "S": "Consulta habilitada."
+    }
+  },
+  {
+    "parametro_original": "HABILITA_TRANSFERIR_COTACAO",
+    "titulo_sugerido": "Permitir Transferência de Cotação entre Empresas/Filiais",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') a funcionalidade que permite transferir uma cotação em andamento para outra Empresa ou Filial do sistema.",
+    "funcionalidade_impactada": "Cotação",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Funcionalidade desabilitada.",
+      "S": "Funcionalidade habilitada."
+    }
+  },
+  {
+    "parametro_original": "HABILITAR_DESCRICAO_COMPLEMENTAR_MEMO",
+    "titulo_sugerido": "Aumentar Limite de Caracteres da Descrição Complementar",
+    "descricao_sugerida": "Quando ativado ('S'), aumenta o tamanho máximo do campo 'Descrição Complementar' para o tipo MEMO (texto longo). Se 'N', mantém o limite padrão.",
+    "funcionalidade_impactada": "Campos de Texto",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Limite de caracteres padrão.",
+      "S": "Limite de caracteres estendido (MEMO)."
+    }
+  },
+  {
+    "parametro_original": "HABILITAR_GERACAO_PRE_PEDIDO_EXCEL",
+    "titulo_sugerido": "Habilitar Geração de Pré-Pedido via Excel",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') a funcionalidade de criar um Pré-Pedido em lote através da importação de uma planilha do Excel.",
+    "funcionalidade_impactada": "Pré-Pedido",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Geração via Excel habilitada.",
+      "N": "Geração via Excel desabilitada."
+    }
+  },
+  {
+    "parametro_original": "HABILITAR_PREFIXO_FUNCAO_TPCS",
+    "titulo_sugerido": "Habilitar Prefixo 'TPCS' para Funções",
+    "descricao_sugerida": "Quando 'S', o sistema adiciona o prefixo 'TPCS.' a todas as chamadas de funções customizadas (ex: WSGETCONS se torna TPCS.WSGETCONS). Parâmetro técnico para ambientes específicos.",
+    "funcionalidade_impactada": "Execução de Funções (Técnico)",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Prefixo desabilitado.",
+      "S": "Prefixo habilitado."
+    }
+  },
+  {
+    "parametro_original": "IDIOMA",
+    "titulo_sugerido": "Idioma Padrão do Sistema",
+    "descricao_sugerida": "Define o idioma padrão da interface do sistema. Ex: 'PT_BR' (Português), 'EN_US' (Inglês), 'ES_ES' (Espanhol).",
+    "funcionalidade_impactada": "Interface do Usuário (Geral)",
+    "valor_default": "PT_BR",
+    "valores_possiveis": {
+      "PT_BR": "Português (Brasil)",
+      "EN_US": "Inglês (Estados Unidos)",
+      "ES_ES": "Espanhol (Espanha)"
+    }
+  },
+  {
+    "parametro_original": "LIBERACAO_PARCIAL_SC",
+    "titulo_sugerido": "Permitir Liberação Parcial de Quantidade na SC",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') a opção de aprovar uma quantidade menor do que a solicitada em um item da SC. Funciona apenas para aprovação sem alçada.",
+    "funcionalidade_impactada": "Fluxo de Aprovação de SC",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Liberação apenas da quantidade total.",
+      "S": "Permite liberar quantidade parcial."
+    }
+  },
+  {
+    "parametro_original": "LIBERACAOSC",
+    "titulo_sugerido": "Utilizar Fluxo de Liberação de SC",
+    "descricao_sugerida": "Ativa ('S') ou desativa ('N') completamente o processo de aprovação/liberação para Solicitações de Compra. Se 'N', as SCs são criadas já liberadas.",
+    "funcionalidade_impactada": "Fluxo de Aprovação de SC",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Requer liberação de SC.",
+      "N": "Não requer liberação de SC."
+    }
+  },
+  {
+    "parametro_original": "MAPA_COTACAO_AGLUTINA",
+    "titulo_sugerido": "Agrupar Itens no Mapa de Cotação (Visão do Fornecedor)",
+    "descricao_sugerida": "Define como os itens são exibidos para o fornecedor no mapa de cotação. 'S' agrupa os itens por produto, e 'N' exibe cada item de SC separadamente.",
+    "funcionalidade_impactada": "Cotação (Portal do Fornecedor)",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Exibe todos os itens separadamente.",
+      "S": "Agrupa os itens por código de produto."
+    }
+  },
+  {
+    "parametro_original": "MOEDAS_UTILIZADAS",
+    "titulo_sugerido": "Moedas Disponíveis no Sistema",
+    "descricao_sugerida": "Define a lista de moedas que podem ser utilizadas no sistema, com seus respectivos códigos, nomes e símbolos. Formato: CODIGO:NOME:SIMBOLO|CODIGO2:NOME2:SIMBOLO2.",
+    "funcionalidade_impactada": "Cotação, Pedido de Compra",
+    "valor_default": "1:REAL:R$|2:DOLAR:US$|3:UFIR:|4:EURO:€|5:IENE:¥",
+    "valores_possiveis": {
+      "Texto": "String formatada com as moedas."
+    }
+  },
+  {
+    "parametro_original": "NOMECLATURA_APROVADOR_PROCESSO_COTACAO",
+    "titulo_sugerido": "Rótulo para 'Anuente da Cotação'",
+    "descricao_sugerida": "Define o texto do rótulo para o aprovador (anuente) na tela de 'Processo de Cotação'.",
+    "funcionalidade_impactada": "Nomenclatura do Sistema",
+    "valor_default": "Anuente da Cotação",
+    "valores_possiveis": {
+      "Texto": "Nome customizado para o rótulo."
+    }
+  },
+  {
+    "parametro_original": "OBRIGATORIO_CC",
+    "titulo_sugerido": "Obrigatoriedade do Centro de Custo",
+    "descricao_sugerida": "Torna o preenchimento do campo 'Centro de Custo' obrigatório ('S') ou opcional ('N') nos documentos do sistema.",
+    "funcionalidade_impactada": "Campos Contábeis (Geral)",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Campo obrigatório.",
+      "N": "Campo opcional."
+    }
+  },
+  {
+    "parametro_original": "OBRIGATORIO_CLVL",
+    "titulo_sugerido": "Obrigatoriedade da Classe de Valor",
+    "descricao_sugerida": "Torna o preenchimento do campo 'Classe de Valor' obrigatório ('S') ou opcional ('N') nos documentos do sistema.",
+    "funcionalidade_impactada": "Campos Contábeis (Geral)",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo opcional.",
+      "S": "Campo obrigatório."
+    }
+  },
+  {
+    "parametro_original": "OBRIGATORIO_CONTA_CONTABIL",
+    "titulo_sugerido": "Obrigatoriedade da Conta Contábil",
+    "descricao_sugerida": "Torna o preenchimento do campo 'Conta Contábil' obrigatório ('S') ou opcional ('N') nos documentos do sistema.",
+    "funcionalidade_impactada": "Campos Contábeis (Geral)",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo opcional.",
+      "S": "Campo obrigatório."
+    }
+  },
+  {
+    "parametro_original": "OBRIGATORIO_CONTA_ORCAMENTARIA",
+    "titulo_sugerido": "Obrigatoriedade da Conta Orçamentária",
+    "descricao_sugerida": "Torna o preenchimento do campo 'Conta Orçamentária' obrigatório ('S') ou opcional ('N') nos documentos do sistema.",
+    "funcionalidade_impactada": "Controle Orçamentário",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo opcional.",
+      "S": "Campo obrigatório."
+    }
+  },
+  {
+    "parametro_original": "OBRIGATORIO_IT_CONTABIL",
+    "titulo_sugerido": "Obrigatoriedade do Item Contábil",
+    "descricao_sugerida": "Torna o preenchimento do campo 'Item Contábil' obrigatório ('S') ou opcional ('N') nos documentos do sistema.",
+    "funcionalidade_impactada": "Campos Contábeis (Geral)",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo opcional.",
+      "S": "Campo obrigatório."
+    }
+  },
+  {
+    "parametro_original": "OBRIGATORIO_PCO",
+    "titulo_sugerido": "Obrigatoriedade do PCO (Planilha e Conta)",
+    "descricao_sugerida": "Torna o preenchimento dos campos de PCO ('Planilha Orçamentária' e 'Conta Orçamentária') obrigatório ('S') ou opcional ('N').",
+    "funcionalidade_impactada": "Controle Orçamentário",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campos opcionais.",
+      "S": "Campos obrigatórios."
+    }
+  },
+  {
+    "parametro_original": "OBRIGATORIO_PLANILHA_ORCAMENTARIA",
+    "titulo_sugerido": "Obrigatoriedade da Planilha Orçamentária",
+    "descricao_sugerida": "Torna o preenchimento do campo 'Planilha Orçamentária' obrigatório ('S') ou opcional ('N').",
+    "funcionalidade_impactada": "Controle Orçamentário",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo opcional.",
+      "S": "Campo obrigatório."
+    }
+  },
+  {
+    "parametro_original": "OBRIGATORIO_TIPOSC",
+    "titulo_sugerido": "Obrigatoriedade do Tipo de SC",
+    "descricao_sugerida": "Torna o preenchimento do campo 'Tipo SC' obrigatório ('S') ou opcional ('N') nas telas de SC e Pré-Pedido.",
+    "funcionalidade_impactada": "SC e Pré-Pedido",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Campo opcional.",
+      "S": "Campo obrigatório."
+    }
+  },
+  {
+    "parametro_original": "PCO_CONSIDERA_PERIODO",
+    "titulo_sugerido": "Período de Apuração do Saldo Orçamentário",
+    "descricao_sugerida": "Define como o saldo do orçamento (PCO) é consultado. 'T' (Total do orçamento), 'M' (Saldo do mês corrente), 'A' (Saldo acumulado até o mês corrente).",
+    "funcionalidade_impactada": "Controle Orçamentário",
+    "valor_default": "T",
+    "valores_possiveis": {
+      "T": "Total",
+      "M": "Mensal",
+      "A": "Acumulado"
+    }
+  },
+  {
+    "parametro_original": "PCO_VALIDA_CENTRO_CUSTO",
+    "titulo_sugerido": "Considerar Centro de Custo na Validação de Orçamento",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') o filtro por Centro de Custo ao validar o saldo do orçamento (PCO).",
+    "funcionalidade_impactada": "Controle Orçamentário",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Não considera o CC na validação.",
+      "S": "Considera o CC na validação."
+    }
+  },
+  {
+    "parametro_original": "PERMITE_ALTERACAO_VL_UNIIT_NF",
+    "titulo_sugerido": "Permitir Alteração do Valor Unitário na Entrada da NF",
+    "descricao_sugerida": "Define se o usuário pode ('S') ou não ('N') alterar o valor unitário de um item na tela de entrada de Nota Fiscal, quando o item vem de um Pedido de Compra.",
+    "funcionalidade_impactada": "Nota Fiscal",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Permite alteração.",
+      "N": "Não permite alteração."
+    }
+  },
+  {
+    "parametro_original": "SC_UTILIZA_SALDO_ALMOXARIFADO",
+    "titulo_sugerido": "Exibir Saldo em Almoxarifado na Inclusão de SC",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') a exibição do saldo em estoque do item no almoxarifado durante a inclusão de uma Solicitação de Compra.",
+    "funcionalidade_impactada": "Solicitação de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Saldo não é exibido.",
+      "S": "Saldo é exibido."
+    }
+  },
+  {
+    "parametro_original": "SCM_ALTERA_DATA_EMISSAO_PRE_PEDIDO",
+    "titulo_sugerido": "Permitir Alterar Data de Emissão do Pré-Pedido",
+    "descricao_sugerida": "Define se o usuário pode ('S') ou não ('N') alterar a data de emissão na tela de Pré-Pedido.",
+    "funcionalidade_impactada": "Pré-Pedido",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Permite alterar a data.",
+      "N": "Não permite alterar a data."
+    }
+  },
+  {
+    "parametro_original": "SCM_ALTERA_QTDE_SC_LIBERACAO",
+    "titulo_sugerido": "Permitir que Aprovador Altere Quantidade da SC",
+    "descricao_sugerida": "Permite ('S') ou não ('N') que o aprovador altere a quantidade de um item na tela de liberação de SC sem precisar retornar a solicitação ao solicitante.",
+    "funcionalidade_impactada": "Fluxo de Aprovação de SC",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Aprovador não pode alterar a quantidade.",
+      "S": "Aprovador pode alterar a quantidade."
+    }
+  },
+  {
+    "parametro_original": "SCM_ANUENTE_COTACAO_MELHOR_PRECO",
+    "titulo_sugerido": "Permitir que Anuente Selecione Fornecedor na Cotação",
+    "descricao_sugerida": "Permite ('S') ou não ('N') que o anuente (aprovador técnico/solicitante) selecione o fornecedor vencedor ao liberar a cotação, em vez de apenas aprovar a seleção do comprador.",
+    "funcionalidade_impactada": "Fluxo de Aprovação de Cotação",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Anuente não seleciona o fornecedor.",
+      "S": "Anuente seleciona o fornecedor."
+    }
+  },
+  {
+    "parametro_original": "SCM_ANUENTE_GENERICO",
+    "titulo_sugerido": "Permitir Envio de Cotação com Anuente Genérico",
+    "descricao_sugerida": "Permite ('S') ou não ('N') o envio de uma cotação para anuência sem a especificação de um anuente individual, utilizando um grupo ou perfil genérico.",
+    "funcionalidade_impactada": "Fluxo de Aprovação de Cotação",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Requer anuente específico.",
+      "S": "Permite anuente genérico."
+    }
+  },
+  {
+    "parametro_original": "SCM_ATUALIZA_BASE_CONHECIMENTO",
+    "titulo_sugerido": "Sincronizar Anexos com a Base de Conhecimento Protheus",
+    "descricao_sugerida": "Determina se os anexos adicionados no GoEvo devem ser sincronizados ('S') com a base de conhecimento (tabela SIGAKB) do Protheus ou não ('N').",
+    "funcionalidade_impactada": "Gestão de Anexos",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Não sincroniza anexos com o Protheus.",
+      "S": "Sincroniza anexos com o Protheus."
+    }
+  },
+  {
+    "parametro_original": "SCM_ATUALIZA_GESTOR_SC_AUTOMATICO",
+    "titulo_sugerido": "Atualizar Gestor Automaticamente em SCs em Liberação",
+    "descricao_sugerida": "Quando ativado ('S'), o sistema atualiza automaticamente o gestor/aprovador em todas as SCs com status 'Em Liberação' caso o gestor do Centro de Custo seja alterado.",
+    "funcionalidade_impactada": "Fluxo de Aprovação de SC",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Atualização automática habilitada.",
+      "N": "Atualização automática desabilitada."
+    }
+  },
+  {
+    "parametro_original": "SCM_AVALIACAO_NF_POR_TIPO",
+    "titulo_sugerido": "Avaliação de NF por Tipo de Fornecimento",
+    "descricao_sugerida": "Define o método de avaliação da NF do fornecedor. 'S' utiliza perguntas e regras atreladas ao 'Tipo de Fornecimento' do fornecedor. 'N' utiliza um questionário padrão para todas as NFs.",
+    "funcionalidade_impactada": "Avaliação de Fornecedor",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Usa avaliação padrão.",
+      "S": "Usa avaliação baseada no Tipo de Fornecimento."
+    }
+  },
+  {
+    "parametro_original": "SCM_AVISA_COMPRADOR_COTACAO_RESPONDIDA",
+    "titulo_sugerido": "Notificar Comprador sobre Resposta de Cotação",
+    "descricao_sugerida": "Ativa ('S') ou desativa ('N') o envio de notificação por e-mail para o comprador responsável sempre que um fornecedor responde a uma cotação.",
+    "funcionalidade_impactada": "Cotação",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Envia notificação.",
+      "N": "Não envia notificação."
+    }
+  },
+  {
+    "parametro_original": "SCM_AVISO_VENCIMENTO_DOCUMENTO_ENTIDADE_FORNECEDOR",
+    "titulo_sugerido": "Alerta de Vencimento de Documentos do Fornecedor",
+    "descricao_sugerida": "Define com quantos dias de antecedência o sistema deve enviar um e-mail de alerta sobre o vencimento de documentos do fornecedor.",
+    "funcionalidade_impactada": "Cadastro de Fornecedor",
+    "valor_default": "30",
+    "valores_possiveis": {
+      "Numérico": "Número de dias de antecedência para o alerta."
+    }
+  },
+  {
+    "parametro_original": "SCM_CALC_IMPOSTOS",
+    "titulo_sugerido": "Origem do Cálculo de Impostos (Pedido)",
+    "descricao_sugerida": "Define onde o cálculo de impostos do pedido é realizado. 'PROTHEUS' (chama o ERP), 'GOEVO' (cálculo interno), ou Vazio (entrada manual dos impostos).",
+    "funcionalidade_impactada": "Cálculo de Impostos",
+    "valor_default": "PROTHEUS",
+    "valores_possiveis": {
+      "PROTHEUS": "Cálculo realizado pelo Protheus.",
+      "GOEVO": "Cálculo realizado pelo GoEvo.",
+      "": "Entrada manual dos valores."
+    }
+  },
+  {
+    "parametro_original": "SCM_CALC_IMPOSTOS_NF",
+    "titulo_sugerido": "Origem do Cálculo de Impostos (Nota Fiscal)",
+    "descricao_sugerida": "Define onde o cálculo de impostos da nota fiscal é realizado. 'PROTHEUS' (chama o ERP), 'GOEVO' (cálculo interno), ou Vazio (entrada manual dos impostos).",
+    "funcionalidade_impactada": "Cálculo de Impostos",
+    "valor_default": "PROTHEUS",
+    "valores_possiveis": {
+      "PROTHEUS": "Cálculo realizado pelo Protheus.",
+      "GOEVO": "Cálculo realizado pelo GoEvo.",
+      "": "Entrada manual dos valores."
+    }
+  },
+  {
+    "parametro_original": "SCM_CAMPO_ENDERECO_SM0_IMPRESSAO_PEDIDO",
+    "titulo_sugerido": "Endereço da Empresa na Impressão do Pedido",
+    "descricao_sugerida": "Define qual endereço do cadastro da empresa (SM0) será usado na impressão do Pedido de Compra. 'COB' (endereço de cobrança) ou 'END' (endereço de entrega).",
+    "funcionalidade_impactada": "Impressão de Pedido de Compra",
+    "valor_default": "COB",
+    "valores_possiveis": {
+      "COB": "Endereço de Cobrança.",
+      "END": "Endereço de Entrega."
+    }
+  },
+  {
+    "parametro_original": "SCM_COD_PRODUTO",
+    "titulo_sugerido": "Método de Geração de Código de Produto",
+    "descricao_sugerida": "Define como o código de novos produtos será gerado. 'D' (Digitado manualmente), 'A' (Automático sequencial), 'T' (Automático com base no tipo de produto).",
+    "funcionalidade_impactada": "Cadastro de Produto",
+    "valor_default": "D",
+    "valores_possiveis": {
+      "D": "Digitado",
+      "A": "Automático",
+      "T": "Automático por Tipo"
+    }
+  },
+  {
+    "parametro_original": "SCM_CODIGO_AUTO_NATUREZA",
+    "titulo_sugerido": "Geração de Código Automático para Natureza",
+    "descricao_sugerida": "Define se o código para novas Naturezas (financeiras/fiscais) será gerado automaticamente pelo sistema ('S') ou digitado manualmente pelo usuário ('N').",
+    "funcionalidade_impactada": "Cadastro de Natureza",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Código gerado automaticamente.",
+      "N": "Código inserido manualmente."
+    }
+  },
+  {
+    "parametro_original": "SCM_DECIMAL_QUANTIDADE",
+    "titulo_sugerido": "Casas Decimais para Quantidade",
+    "descricao_sugerida": "Define o número de casas decimais a ser utilizado nos campos de quantidade na SC e no Pré-Pedido.",
+    "funcionalidade_impactada": "SC e Pré-Pedido",
+    "valor_default": "2",
+    "valores_possiveis": {
+      "Numérico": "Número de casas decimais."
+    }
+  },
+  {
+    "parametro_original": "SCM_DEFINE_AGRUPAMENTO_DEFAULT_MAPA",
+    "titulo_sugerido": "Visão Padrão de Agrupamento do Mapa de Cotação",
+    "descricao_sugerida": "Define a forma de agrupamento padrão ao abrir o mapa de cotação. 'S' (Sem agrupamento), 'AP' (Agrupado por Produtos), 'AFP' (Agrupado por Filial e Produto).",
+    "funcionalidade_impactada": "Mapa de Cotação",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Sem Agrupamento",
+      "AP": "Agrupado por Produtos",
+      "AFP": "Agrupado por Filial e Produto"
+    }
+  },
+  {
+    "parametro_original": "SCM_DEFINE_ALOCACAO_COMPRADOR_DEFAULT_SC",
+    "titulo_sugerido": "Origem do Comprador Padrão na SC",
+    "descricao_sugerida": "Define qual entidade do sistema determinará o comprador padrão na SC. 'CC' (do cadastro do Centro de Custo), 'GP' (do cadastro do Grupo de Produto), 'LE' (do cadastro do Local de Entrega).",
+    "funcionalidade_impactada": "Solicitação de Compra",
+    "valor_default": "CC",
+    "valores_possiveis": {
+      "CC": "Centro de Custo",
+      "GP": "Grupo de Produto",
+      "LE": "Local de Entrega"
+    }
+  },
+  {
+    "parametro_original": "SCM_DEFINE_ENVIO_EMAIL_AUTOMATICO",
+    "titulo_sugerido": "Valor Padrão para Envio Automático de E-mails",
+    "descricao_sugerida": "Define o valor padrão ('S' ou 'N') para as opções de envio automático de e-mail ('Enviar E-mail Automático?', 'Copiar Comprador', 'Copiar Solicitante') nas telas de cotação e pré-pedido.",
+    "funcionalidade_impactada": "Cotação e Pré-Pedido",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Marcado como padrão.",
+      "N": "Desmarcado como padrão."
+    }
+  },
+  {
+    "parametro_original": "SCM_DEFINE_MESMA_PRIORIDADE_ITENS_SC",
+    "titulo_sugerido": "Usar Prioridade Única para Todos os Itens da SC",
+    "descricao_sugerida": "Quando ativado ('S'), todos os itens de uma mesma SC terão a prioridade definida pelo primeiro item adicionado. Se 'N', cada item pode ter uma prioridade diferente.",
+    "funcionalidade_impactada": "Solicitação de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Prioridade individual por item.",
+      "S": "Prioridade única para a SC inteira."
+    }
+  },
+  {
+    "parametro_original": "SCM_DEFINE_REGRA_GESTOR_APROVACAO_SC",
+    "titulo_sugerido": "Origem do Gestor de Aprovação da SC",
+    "descricao_sugerida": "Define qual entidade do sistema determinará o gestor/aprovador da SC. 'CC' (do Centro de Custo), 'GP' (do Grupo de Produto), 'SO' (do Solicitante), 'SC' (indicado na própria SC).",
+    "funcionalidade_impactada": "Fluxo de Aprovação de SC",
+    "valor_default": "CC",
+    "valores_possiveis": {
+      "CC": "Centro de Custo",
+      "GP": "Grupo de Produto",
+      "SO": "Solicitante",
+      "SC": "Indicado na Solicitação de Compra"
+    }
+  },
+  {
+    "parametro_original": "SCM_DOIS_APROVADOR_NF",
+    "titulo_sugerido": "Exigir Dupla Aprovação para Nota Fiscal",
+    "descricao_sugerida": "Define se o lançamento de uma Nota Fiscal requer a aprovação de dois gestores ('S') ou apenas um ('N') antes de ser confirmado.",
+    "funcionalidade_impactada": "Fluxo de Aprovação de Nota Fiscal",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Requer um aprovador.",
+      "S": "Requer dois aprovadores."
+    }
+  },
+  {
+    "parametro_original": "SCM_EDITA_APROVADOR",
+    "titulo_sugerido": "Permissões de Gerenciamento de Aprovadores",
+    "descricao_sugerida": "Define o nível de permissão na tela de Aprovadores. 'S' (permite incluir, editar e excluir), 'N' (permite apenas editar).",
+    "funcionalidade_impactada": "Cadastro de Aprovadores",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Permissões completas (CRUD).",
+      "N": "Permite apenas edição."
+    }
+  },
+  {
+    "parametro_original": "SCM_GERA_NOTA_FISCAL",
+    "titulo_sugerido": "Ação Padrão na Aprovação de Documento de Entrada",
+    "descricao_sugerida": "Define o que é gerado no ERP após a aprovação de um documento fiscal no GoEvo. 'N' (gera Nota Fiscal final), 'P' (gera Pré-Nota), 'I' (não gera documento no ERP, apenas aprova no GoEvo).",
+    "funcionalidade_impactada": "Entrada de Nota Fiscal",
+    "valor_default": "I",
+    "valores_possiveis": {
+      "N": "Gera Nota Fiscal (SF1/SD1).",
+      "P": "Gera Pré-Nota.",
+      "I": "Ignora geração no ERP."
+    }
+  },
+  {
+    "parametro_original": "SCM_GERASC1",
+    "titulo_sugerido": "Sincronizar SC com Tabela SC1 do Protheus",
+    "descricao_sugerida": "Define se as Solicitações de Compra criadas e alteradas no GoEvo devem ser sincronizadas ('S') com a tabela SC1 do Protheus ou não ('N').",
+    "funcionalidade_impactada": "Integração com Protheus",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Sincronização habilitada.",
+      "N": "Sincronização desabilitada."
+    }
+  },
+  {
+    "parametro_original": "SCM_HABILITA_ABA_ATENDIMENTO_GOEVOZAP",
+    "titulo_sugerido": "Habilitar Aba de Atendimento GoevoZap",
+    "descricao_sugerida": "Controla a visibilidade ('S' para exibir, 'N' para ocultar) da aba de atendimento da integração com o GoevoZap.",
+    "funcionalidade_impactada": "Integração com GoevoZap",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Aba oculta.",
+      "S": "Aba exibida."
+    }
+  },
+  {
+    "parametro_original": "SCM_HABILITA_API_PROTHEUS",
+    "titulo_sugerido": "Habilitar Integração com ERP Protheus",
+    "descricao_sugerida": "Ativa ('S') ou desativa ('N') completamente a integração do sistema com o ERP Protheus.",
+    "funcionalidade_impactada": "Integração com ERP",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Integração desabilitada.",
+      "S": "Integração habilitada."
+    }
+  },
+  {
+    "parametro_original": "SCM_HABILITA_AVALIACAO_FORNECEDOR",
+    "titulo_sugerido": "Habilitar Pop-up de Avaliação de Fornecedor",
+    "descricao_sugerida": "Ativa ('S') ou desativa ('N') a exibição de um pop-up para avaliação do fornecedor após a conclusão de certas etapas do processo (ex: recebimento de NF).",
+    "funcionalidade_impactada": "Avaliação de Fornecedor",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Pop-up desabilitado.",
+      "S": "Pop-up habilitado."
+    }
+  },
+  {
+    "parametro_original": "SCM_HABILITA_MAPA_COTACAO_V2",
+    "titulo_sugerido": "Ativar Nova Interface do Mapa de Cotação",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') a nova versão da interface de usuário (V2) para a tela do Mapa de Cotação.",
+    "funcionalidade_impactada": "Mapa de Cotação",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Usa a nova interface (V2).",
+      "N": "Usa a interface antiga."
+    }
+  },
+  {
+    "parametro_original": "SCM_HABILITA_RATEIO",
+    "titulo_sugerido": "Habilitar Funcionalidade de Rateio Contábil",
+    "descricao_sugerida": "Ativa ('S') ou desativa ('N') a funcionalidade de rateio, que permite dividir o custo de um item entre múltiplos centros de custo, contas contábeis, etc.",
+    "funcionalidade_impactada": "Campos Contábeis (Geral)",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Rateio desabilitado.",
+      "S": "Rateio habilitado."
+    }
+  },
+  {
+    "parametro_original": "SCM_HABILITA_SC_SIMPLIFICADA",
+    "titulo_sugerido": "Habilitar Inclusão de SC Simplificada",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') um modo de inclusão de SC simplificado, com os campos lado a lado para digitação rápida.",
+    "funcionalidade_impactada": "Solicitação de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Modo simplificado desabilitado.",
+      "S": "Modo simplificado habilitado."
+    }
+  },
+  {
+    "parametro_original": "SCM_LISTA_APROVACAO_CONSOLIDADA",
+    "titulo_sugerido": "Consolidar Lista de Aprovação de Pedidos (Multi-filial)",
+    "descricao_sugerida": "Define se a lista de pedidos pendentes de aprovação deve ser consolidada ('S'), mostrando itens de todas as filiais, ou se deve mostrar apenas itens da filial do aprovador ('N').",
+    "funcionalidade_impactada": "Fluxo de Aprovação de Pedido de Compra",
+    "valor_default": "N",
+    "valores_possiveis": {
+      "N": "Visão por filial.",
+      "S": "Visão consolidada."
+    }
+  },
+  {
+    "parametro_original": "SCM_USA_PROTHEUS",
+    "titulo_sugerido": "Utilizar Integração com Protheus (ExecAuto)",
+    "descricao_sugerida": "Indica se o ambiente utiliza ('S') ou não ('N') o ERP Protheus, habilitando as chamadas de funções de integração via ExecAuto.",
+    "funcionalidade_impactada": "Integração com ERP (Técnico)",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Usa Protheus.",
+      "N": "Não usa Protheus."
+    }
+  },
+  {
+    "parametro_original": "SCM_UTILIZA_FILIAL",
+    "titulo_sugerido": "Utilizar Campo Filial na Aprovação de Pedidos",
+    "descricao_sugerida": "Define se o campo Filial deve ser considerado ('S') na Central de Aprovação de Pedidos. Se 'N', o sistema pode considerar o Local de Entrega para essa finalidade.",
+    "funcionalidade_impactada": "Fluxo de Aprovação de Pedido de Compra",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Considera a filial.",
+      "N": "Não considera a filial."
+    }
+  },
+  {
+    "parametro_original": "SCM_VINCULA_USUARIO_PROTHEUS",
+    "titulo_sugerido": "Vincular Cadastros a Usuários do Protheus",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') a exibição de um campo para vincular os cadastros de Aprovador, Comprador e Solicitante a um usuário correspondente do Protheus.",
+    "funcionalidade_impactada": "Cadastros (Aprovador, Comprador, Solicitante)",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Campo de vínculo habilitado.",
+      "N": "Campo de vínculo desabilitado."
+    }
+  },
+  {
+    "parametro_original": "UTILIZA_TIPO_SC",
+    "titulo_sugerido": "Utilizar Campo 'Tipo de SC'",
+    "descricao_sugerida": "Habilita ('S') ou desabilita ('N') o uso e a exibição de campos relacionados ao 'Tipo de SC' (ex: Compra, Serviço).",
+    "funcionalidade_impactada": "Solicitação de Compra",
+    "valor_default": "S",
+    "valores_possiveis": {
+      "S": "Campo 'Tipo de SC' habilitado.",
+      "N": "Campo 'Tipo de SC' desabilitado."
+    }
+  },
+  {
+    "parametro_original": "VALOR_MASK",
+    "titulo_sugerido": "Casas Decimais para Valores Unitários",
+    "descricao_sugerida": "Define o número de casas decimais a ser utilizado em campos de valor unitário no sistema.",
+    "funcionalidade_impactada": "Campos de Valor",
+    "valor_default": "2",
+    "valores_possiveis": {
+      "Numérico": "Número de casas decimais."
+    }
+  }
+]
